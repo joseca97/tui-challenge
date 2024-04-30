@@ -1,13 +1,13 @@
 {
 	"info": {
-		"_postman_id": "9f3903c5-c831-4dbd-b3c8-b7f61828f3d1",
+		"_postman_id": "8ead3720-623c-453c-a13e-e73f611c4d28",
 		"name": "Meta coding challenge",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "28990442"
+		"_exporter_id": "4625316"
 	},
 	"item": [
 		{
-			"name": "CheckEndpoint",
+			"name": "Get Quote By Id",
 			"event": [
 				{
 					"listen": "test",
@@ -16,10 +16,7 @@
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"\r",
-							"pm.test(\"Body matches string\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"hello\");\r",
-							"});"
+							""
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -30,14 +27,96 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/hello",
+					"raw": "http://localhost:8080/quotes?id=5eb17aadb69dc744b4e70d4a",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"hello"
+						"quotes"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5eb17aadb69dc744b4e70d4a"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Quotes by Author",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quotes/author?author=Hosea Ballou",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quotes",
+						"author"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "Hosea Ballou"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Quotes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quotes/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quotes",
+						"all"
 					]
 				}
 			},
