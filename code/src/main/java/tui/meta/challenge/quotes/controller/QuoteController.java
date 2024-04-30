@@ -21,7 +21,7 @@ public class QuoteController {
     
     @GetMapping
     public QuoteDto findQuoteById(@RequestParam String id) {
-        return service.findQuouteById(id);
+        return service.findQuoteById(id);
     }
 
     @GetMapping("/author")

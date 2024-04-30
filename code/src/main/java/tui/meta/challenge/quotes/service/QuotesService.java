@@ -2,10 +2,8 @@ package tui.meta.challenge.quotes.service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
-import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
 
 import tui.meta.challenge.quotes.dto.QuoteDto;
@@ -16,7 +14,7 @@ public class QuotesService {
     
     private final QuoteRepository repository;
 
-    public QuoteDto findQuouteById(String id) {
+    public QuoteDto findQuoteById(String id) {
         return new QuoteDto(repository
             .findById(id)
             .orElseThrow(

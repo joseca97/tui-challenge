@@ -5,10 +5,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Document("quotes")
 @Data
+@AllArgsConstructor
 public class Quote {
 
     @Id
