@@ -3,7 +3,6 @@ package tui.meta.challenge.quotes.service;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -19,13 +18,13 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import tui.meta.challenge.quotes.dto.QuoteDto;
 import tui.meta.challenge.quotes.entity.Quote;
-import tui.meta.challenge.quotes.repository.QuoteRepository;
+import tui.meta.challenge.quotes.repository.QuotesRepository;
 
 @ExtendWith(MockitoExtension.class)
 public class QuotesServiceTest {
 
     @Mock
-    private QuoteRepository repository;
+    private QuotesRepository repository;
 
     @InjectMocks
     private QuotesService service;

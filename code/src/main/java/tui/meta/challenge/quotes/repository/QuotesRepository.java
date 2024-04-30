@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import tui.meta.challenge.quotes.entity.Quote;
 
 @Repository
-public interface QuoteRepository extends MongoRepository<Quote, String> {
+public interface QuotesRepository extends MongoRepository<Quote, String> {
 
     List<Quote> findByQuoteAuthor(String quoteAuthor);
 

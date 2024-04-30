@@ -7,12 +7,12 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import tui.meta.challenge.quotes.dto.QuoteDto;
-import tui.meta.challenge.quotes.repository.QuoteRepository;
+import tui.meta.challenge.quotes.repository.QuotesRepository;
 
 @Service
 public class QuotesService {
     
-    private final QuoteRepository repository;
+    private final QuotesRepository repository;
 
     public QuoteDto findQuoteById(String id) {
         return new QuoteDto(repository
@@ -35,7 +35,7 @@ public class QuotesService {
                     .collect(Collectors.toList());
     }
 
-    public QuotesService(QuoteRepository repository) {
+    public QuotesService(QuotesRepository repository) {
         this.repository = repository;
     }
 }

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/quotes")
-public class QuoteController {
+public class QuotesController {
 
     private final QuotesService service;
     
@@ -34,7 +34,7 @@ public class QuoteController {
         return service.findAllQuotes();
     }
 
-    public QuoteController(QuotesService service) {
+    public QuotesController(QuotesService service) {
         this.service = service;
     }
     
